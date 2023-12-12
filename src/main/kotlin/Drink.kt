@@ -1,7 +1,7 @@
-class Drinks {
-    fun drinksMenu () { // displayinfo로 상속?
+class Drink {
+    fun drinkMenu () { // displayinfo로 상속?
         // UI 출력
-        println("[ Drinks MENU ]")
+        println("[ Drink MENU ]")
         println("1. Raspberry Lemonade        | W 4.8 | 토마토, 양상추, 쉑소스가 토핑된 치즈버거")
         println("2. Lemonade                  | W 4.3 | 베이컨, 체리 페퍼에 쉑소스가 토핑된 치즈버거")
         println("3. Abita Root Beer           | W 4.8 | 몬스터 치즈와 체다 치즈로 속을 채운 베지테리안 버거")

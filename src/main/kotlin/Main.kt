@@ -24,9 +24,40 @@ fun main() {
                 println(selectBurgerMenu)
                 break
             }
-            else -> {
+            2 -> while (true) {
+                var concrete = Concrete()
+                concrete.concreteMenu()
+                val inputConcreteMenu = InputException()
+                inputConcreteMenu.exception()
+                val selectConcreteMenu = inputConcreteMenu.returnValue()
+                println(selectConcreteMenu)
+                break
+            }
+            3 -> while (true) {
+                var drink = Drink()
+                drink.drinkMenu()
+                val inputDrinkMenu = InputException()
+                inputDrinkMenu.exception()
+                val selectDrinkMenu = inputDrinkMenu.returnValue()
+                println(selectDrinkMenu)
+                break
+            }
+            4 -> while (true) {
+                var chicken = ChickenMenu()
+                chicken.chickenMenu()
+                val inputChickenMenuMenu = InputException()
+                inputChickenMenuMenu.exception()
+                val selectChickenMenuMenu = inputChickenMenuMenu.returnValue()
+                println(selectChickenMenuMenu)
+                break
+            }
+
+            0 -> {
                 println("프로그램을 종료합니다.")
                 break
+            }
+            else -> {
+                println("올바른 숫자를 입력해 주세요.")
             }
         }
     }

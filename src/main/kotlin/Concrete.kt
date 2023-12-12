@@ -1,6 +1,6 @@
-class Concretes {
+class Concrete {
 
-    fun concretesMenu () { // displayinfo로 상속?
+    fun concreteMenu () { // displayinfo로 상속?
         // UI 출력
         println("[ Concretes MENU ]")
         println("1. Shack Attack           | W 6.2 | 진한 초콜릿 커스터드에 퍼지 소스와 세 가지 초콜릿 토핑이 블렌딩된 쉐이크쉑의 대표 콘크리트")
