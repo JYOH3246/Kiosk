@@ -21,9 +21,9 @@ fun main() {
                 val inputBurgerMenu = InputException()
                 inputBurgerMenu.exception()
                 val selectBurgerMenu = inputBurgerMenu.returnValue()
-
+                println(selectBurgerMenu)
+                break
             }
-
             else -> {
                 println("프로그램을 종료합니다.")
                 break
