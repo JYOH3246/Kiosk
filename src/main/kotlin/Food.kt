@@ -1,6 +1,6 @@
-class Menu {
-
-    fun mainMenu () {
+open class Food : Store {
+    private var input:Int =0
+    override fun displayInfo() {
         // UI 출력
         println("아래 메뉴판을 보시고 메뉴를 골라 입력해주세요.")
         println("[ SHAKESHACK MENU ]")
@@ -10,5 +10,23 @@ class Menu {
         println("4. Chicken    | 신선한 치킨 통살을 버터밀크에 수비드 하여 주문과 동시에 바삭하게 튀겼습니다.")
         println("0. 종료        | 프로그램 종료")
         println("입력 시에는 숫자만 입력해 주시기 바랍니다.")
+    }
+
+    override fun inputWithException() {
+        while(true) {
+            try {
+                input = readln().toInt()
+            }
+            // catch : java.lang.NumberFormatException 예외를 처리.
+            catch (e: java.lang.NumberFormatException) {
+                println("숫자를 입력해 주시기 바랍니다.")
+                continue
+            }
+            break
+        }
+    }
+
+    override fun returnValue(): Int {
+       return input
     }
 }
