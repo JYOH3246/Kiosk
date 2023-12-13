@@ -1,8 +1,11 @@
-class InputException {
+class InputWithException : Store {
     //input이 들어가면 var로 처리하자
     private var input:Int =0
+    override fun displayInfo() {
+        TODO("Not yet implemented")
+    }
 
-    fun exception() {
+    override fun inputWithException() {
         while(true) {
             try {
                 input = readln().toInt()
@@ -15,7 +18,8 @@ class InputException {
             break
         }
     }
-    fun returnValue(): Int {
+
+    override fun returnValue(): Int {
         return input
     }
 }
