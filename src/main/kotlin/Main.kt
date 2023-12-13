@@ -1,4 +1,4 @@
-fun main() {
+fun main() { //gittest
     // 무한루프 : 종료를 선택해야 프로그램이 끝남
     while (true) {
         val food = Food()
