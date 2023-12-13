@@ -5,20 +5,18 @@ fun main() {
         // UI 출력 (인터페이스)
         food.displayInfo()
         // 숫자를 입력받는 Input with 예외처리
-        val inputFood = InputWithException()
-        inputFood.inputWithException()
-        val selectMenu = inputFood.returnValue()
+        food.inputWithException()
+        val selectFood = food.returnValue()
         // 조건 : input에 값을 입력했을 때
-        when (selectMenu) {
+        when (selectFood) {
             //버거
             1 -> {
                 while (true) {
                     val burger = Burger()
-                    burger.burgerMenu()
-                    val inputBurgerMenu = InputWithException()
-                    inputBurgerMenu.inputWithException()
-                    val selectBurgerMenu = inputBurgerMenu.returnValue()
-                    println(selectBurgerMenu)
+                    burger.displayInfo()
+                    burger.inputWithException()
+                    val selectBurger = burger.returnValue()
+                    println(selectBurger)
                     break
                 }
             }
@@ -26,10 +24,9 @@ fun main() {
             2 -> {
                 while (true) {
                     val concrete = Concrete()
-                    concrete.concreteMenu()
-                    val inputConcreteMenu = InputWithException()
-                    inputConcreteMenu.inputWithException()
-                    val selectConcreteMenu = inputConcreteMenu.returnValue()
+                    concrete.displayInfo()
+                    concrete.inputWithException()
+                    val selectConcreteMenu = concrete.returnValue()
                     println(selectConcreteMenu)
                     break
                 }
@@ -38,10 +35,9 @@ fun main() {
             3 -> {
                 while (true) {
                     val drink = Drink()
-                    drink.drinkMenu()
-                    val inputDrinkMenu = InputWithException()
-                    inputDrinkMenu.inputWithException()
-                    val selectDrinkMenu = inputDrinkMenu.returnValue()
+                    drink.displayInfo()
+                    drink.inputWithException()
+                    val selectDrinkMenu = drink.returnValue()
                     println(selectDrinkMenu)
                     break
                 }
@@ -49,11 +45,10 @@ fun main() {
             //치킨
             4 -> {
                 while (true) {
-                    val chicken = ChickenMenu()
-                    chicken.chickenMenu()
-                    val inputChickenMenuMenu = InputWithException()
-                    inputChickenMenuMenu.inputWithException()
-                    val selectChickenMenuMenu = inputChickenMenuMenu.returnValue()
+                    val chicken = Chicken()
+                    chicken.displayInfo()
+                    chicken.inputWithException()
+                    val selectChickenMenuMenu = chicken.returnValue()
                     println(selectChickenMenuMenu)
                     break
                 }
