@@ -1,4 +1,4 @@
-class Food : Store {
+open class Food : Store {
     private var input:Int =0
     override fun displayInfo() {
         // UI 출력

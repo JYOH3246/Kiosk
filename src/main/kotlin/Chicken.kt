@@ -1,4 +1,4 @@
-class Chicken : Store {
+class Chicken : Food(),Store {
     private var input:Int =0
     override fun displayInfo() {
         println("[ Chicken MENU ]")
@@ -8,6 +8,7 @@ class Chicken : Store {
         println("4. Chick'n Bites 6-count   | W 5.9  | 한 입에 먹기 좋은 바삭한 치킨 바이트와 허니 머스터드 또는 BBQ 소스를 선택하여 함께 즐기는 메뉴")
         println("5. Chick'n Bites 10-count  | W 8.2  | 한 입에 먹기 좋은 바삭한 치킨 바이트와 허니 머스터드 또는 BBQ 소스를 선택하여 함께 즐기는 메뉴")
         println("0. 뒤로가기                 | 뒤로가기")
+        println("입력 시에는 숫자만 입력해 주시기 바랍니다.")
     }
 
     override fun inputWithException() {
@@ -17,7 +18,7 @@ class Chicken : Store {
             }
             // catch : java.lang.NumberFormatException 예외를 처리.
             catch (e: java.lang.NumberFormatException) {
-                println("숫자를 입력해 주시기 바랍니다.")
+                println("치킨 이름 대신 숫자를 입력해 주세요.")
                 continue
             }
             break

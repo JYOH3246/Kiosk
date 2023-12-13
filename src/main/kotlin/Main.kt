@@ -2,7 +2,7 @@ fun main() {
     // 무한루프 : 종료를 선택해야 프로그램이 끝남
     while (true) {
         val food = Food()
-        // UI 출력 (인터페이스)
+        // UI 출력
         food.displayInfo()
         // 숫자를 입력받는 Input with 예외처리
         food.inputWithException()
