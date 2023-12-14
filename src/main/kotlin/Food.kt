@@ -9,6 +9,9 @@ open class Food : Store {
         println("3. Drinks     | 매장에서 직접 만드는 음료")
         println("4. Chicken    | 신선한 치킨 통살을 버터밀크에 수비드 하여 주문과 동시에 바삭하게 튀겼습니다.")
         println("0. 종료        | 프로그램 종료")
+        println("[ Order ]")
+        println("5. Order      | 주문 관리가 가능합니다.")
+        println("6. Cancel     | 주문 취소가 가능합니다.")
         println("입력 시에는 숫자만 입력해 주시기 바랍니다.")
     }
 

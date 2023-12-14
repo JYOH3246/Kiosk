@@ -13,6 +13,9 @@ fun main() { //gittest
             1 -> {
                 while (true) {
                     val burger = Burger()
+                    burger.list()
+                    burger.price()
+                    burger.comment()
                     burger.displayInfo()
                     burger.inputWithException()
                     val selectBurger = burger.returnValue()
@@ -58,6 +61,7 @@ fun main() { //gittest
                 println("프로그램을 종료합니다.")
                 break
             }
+
             // 그 외 숫자
             else -> {
                 println("올바른 숫자를 입력해 주세요.")
