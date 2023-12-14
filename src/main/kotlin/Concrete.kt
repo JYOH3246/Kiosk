@@ -44,4 +44,13 @@ class Concrete : Food(),ProductInfo {
         price.add(6200)
         price.add(6200)
     }
+    fun returnList (): ArrayList<String> {
+        return list
+    }
+    fun returnPrice (): ArrayList<Int> {
+        return price
+    }
+    fun returnComment (): ArrayList<String> {
+        return comment
+    }
 }

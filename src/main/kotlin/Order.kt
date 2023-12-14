@@ -1,6 +1,6 @@
 class Order : Store {
     private var input:Int =0
-    private var account:Int = 20000
+    private var account:Int = 50000
 
     override fun displayInfo() {
         println("[Orders]")
