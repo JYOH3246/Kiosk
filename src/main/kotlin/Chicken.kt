@@ -1,31 +1,54 @@
-class Chicken : Food(),Store {
-    private var input:Int =0
+class Chicken : Food(),ProductInfo {
+    private var list = ArrayList<String>()
+    private var comment = ArrayList<String>()
+    private var price = ArrayList<Int>()
     override fun displayInfo() {
         println("[ Chicken MENU ]")
-        println("1. Bourbon Bacon Chicken   | W 11.8 | 메이커스 마크 위스키를 활용한 버번 베이컨 잼, 바삭한 닭가슴살 패티, 화이트 체다 치즈, 피클이 올라간 치킨 버거")
-        println("2. Hot Chicken             | W 9.5  | 바삭하고 두툼한 치킨 통살과 스파이시 슬로, 핫 스파이시 시즈닝이 토핑된 치킨 버거")
-        println("3. Chicken Shack           | W 8.0  | 바삭하고 두툼한 치킨 통살과 양상추, 피클, 허브 마요 소스가 토핑된 치킨 버거")
-        println("4. Chick'n Bites 6-count   | W 5.9  | 한 입에 먹기 좋은 바삭한 치킨 바이트와 허니 머스터드 또는 BBQ 소스를 선택하여 함께 즐기는 메뉴")
-        println("5. Chick'n Bites 10-count  | W 8.2  | 한 입에 먹기 좋은 바삭한 치킨 바이트와 허니 머스터드 또는 BBQ 소스를 선택하여 함께 즐기는 메뉴")
+        for (i in 0..<list.size) {
+            println("${i+1}. ${list[i]}  | ${price[i]} |  ${comment[i]}")
+        }
         println("0. 뒤로가기                 | 뒤로가기")
         println("입력 시에는 숫자만 입력해 주시기 바랍니다.")
     }
 
     override fun inputWithException() {
-        while(true) {
-            try {
-                input = readln().toInt()
-            }
-            // catch : java.lang.NumberFormatException 예외를 처리.
-            catch (e: java.lang.NumberFormatException) {
-                println("치킨 이름 대신 숫자를 입력해 주세요.")
-                continue
-            }
-            break
-        }
+        super.inputWithException()
     }
 
     override fun returnValue(): Int {
-        return input
+        return super.returnValue()
+    }
+
+    override fun list () {
+        list.add("Bourbon Bacon Chicken")
+        list.add("Hot Chicken")
+        list.add("Chicken Shack")
+        list.add("Chick'n Bites 6-count")
+        list.add("Chick'n Bites 10-count")
+    }
+
+    override fun comment() {
+        comment.add("쉐이크쉑 시그니처 레몬에이드에 상큼 달콤한 라즈베리가 더해진 시즌 한정 레몬에이드")
+        comment.add("바삭하고 두툼한 치킨 통살과 스파이시 슬로, 핫 스파이시 시즈닝이 토핑된 치킨 버거")
+        comment.add("바삭하고 두툼한 치킨 통살과 양상추, 피클, 허브 마요 소스가 토핑된 치킨 버거")
+        comment.add("한 입에 먹기 좋은 바삭한 치킨 바이트와 허니 머스터드 또는 BBQ 소스를 선택하여 함께 즐기는 메뉴")
+        comment.add("한 입에 먹기 좋은 바삭한 치킨 바이트와 허니 머스터드 또는 BBQ 소스를 선택하여 함께 즐기는 메뉴")
+    }
+
+    override fun price () {
+        price.add(11800)
+        price.add(9500)
+        price.add(8000)
+        price.add(5900)
+        price.add(8200)
+    }
+    fun returnList (): ArrayList<String> {
+        return list
+    }
+    fun returnPrice (): ArrayList<Int> {
+        return price
+    }
+    fun returnComment (): ArrayList<String> {
+        return comment
     }
 }
