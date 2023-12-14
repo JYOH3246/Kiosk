@@ -5,7 +5,7 @@ fun main() { //gittest
     val cartComment = ArrayList<String>()
     loop@ while (true) {
         val food = Food()
-        val account = 20000
+        var account = 20000
         // UI 출력
         food.displayInfo()
         println("상품이 ${cartList.size}개")
@@ -192,6 +192,7 @@ fun main() { //gittest
                         }
                         else {
                             println("주문이 완료되었습니다. 처음 화면으로 돌아갑니다.")
+                            account -= total
                             cartList.clear()
                             cartPrice.clear()
                             cartComment.clear()
