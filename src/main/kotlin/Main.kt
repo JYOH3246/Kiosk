@@ -3,9 +3,9 @@ fun main() { //gittest
     loop@ while (true) {
         val food = Food()
         val account = 20000
-        val productList = ArrayList<String>()
-        val productPrice = ArrayList<Int>()
-        val productComment = ArrayList<String>()
+        val cartList = ArrayList<String>()
+        val cartPrice = ArrayList<Int>()
+        val cartComment = ArrayList<String>()
         // UI 출력
         food.displayInfo()
         // 숫자를 입력받는 Input with 예외처리
@@ -39,9 +39,9 @@ fun main() { //gittest
                             val addBurger = burger.returnValue()
                             if (addBurger == 1) {
                                 println("${burgerList[0]} 가 장바구니에 추가되었습니다.")
-                                productList.add(burgerList[0])
-                                productPrice.add(burgerPrice[0])
-                                productComment.add(burgerComment[0])
+                                cartList.add(burgerList[0])
+                                cartPrice.add(burgerPrice[0])
+                                cartComment.add(burgerComment[0])
                                 continue
                             }
                             else if (addBurger ==2) {
@@ -60,9 +60,9 @@ fun main() { //gittest
                             val addBurger = burger.returnValue()
                             if (addBurger == 1) {
                                 println("${burgerList[1]} 가 장바구니에 추가되었습니다.")
-                                productList.add(burgerList[1])
-                                productPrice.add(burgerPrice[1])
-                                productComment.add(burgerComment[1])
+                                cartList.add(burgerList[1])
+                                cartPrice.add(burgerPrice[1])
+                                cartComment.add(burgerComment[1])
                             }
                             else if (addBurger ==2) {
                                 continue
@@ -79,9 +79,9 @@ fun main() { //gittest
                             val addBurger = burger.returnValue()
                             if (addBurger == 1) {
                                 println("${burgerList[2]} 가 장바구니에 추가되었습니다.")
-                                productList.add(burgerList[2])
-                                productPrice.add(burgerPrice[2])
-                                productComment.add(burgerComment[2])
+                                cartList.add(burgerList[2])
+                                cartPrice.add(burgerPrice[2])
+                                cartComment.add(burgerComment[2])
                             }
                             else if (addBurger ==2) {
                                 continue
@@ -98,9 +98,9 @@ fun main() { //gittest
                             val addBurger = burger.returnValue()
                             if (addBurger == 1) {
                                 println("${burgerList[3]} 가 장바구니에 추가되었습니다.")
-                                productList.add(burgerList[3])
-                                productPrice.add(burgerPrice[3])
-                                productComment.add(burgerComment[3])
+                                cartList.add(burgerList[3])
+                                cartPrice.add(burgerPrice[3])
+                                cartComment.add(burgerComment[3])
                             }
                             else if (addBurger ==2) {
                                 continue
@@ -117,9 +117,9 @@ fun main() { //gittest
                             val addBurger = burger.returnValue()
                             if (addBurger == 1) {
                                 println("${burgerList[4]} 가 장바구니에 추가되었습니다.")
-                                productList.add(burgerList[4])
-                                productPrice.add(burgerPrice[4])
-                                productComment.add(burgerComment[4])
+                                cartList.add(burgerList[4])
+                                cartPrice.add(burgerPrice[4])
+                                cartComment.add(burgerComment[4])
                             }
                             else if (addBurger ==2) {
                                 continue
