@@ -1,44 +1,46 @@
 fun main() { //gittest
     // 무한루프 : 종료를 선택해야 프로그램이 끝남
-    val cartList = ArrayList<String>()
-    val cartPrice = ArrayList<Int>()
-    val cartComment = ArrayList<String>()
+    var cartList = ArrayList<String>()
+    var cartPrice = ArrayList<Int>()
+    var cartComment = ArrayList<String>()
+    var account = 20000
     loop@ while (true) {
-        val food = Food()
-        var account = 20000
+
+        var food = Food()
+        println(account)
         // UI 출력
         food.displayInfo()
         println("상품이 ${cartList.size}개")
         // 숫자를 입력받는 Input with 예외처리
         food.inputWithException()
-        val selectFood = food.returnValue()
+        var selectFood = food.returnValue()
         // 조건 : input에 값을 입력했을 때
         when (selectFood) {
             //버거
             1 -> {
                 while (true) {
-                    val burger = Burger()
+                    var burger = Burger()
                     burger.list()
                     burger.price()
                     burger.comment()
                     burger.displayInfo()
 
                     burger.inputWithException()
-                    val selectBurger = burger.returnValue()
+                    var selectBurger = burger.returnValue()
                     println(selectBurger)
                     if (selectBurger == 0) {
                         continue@loop
                     }
-                    val burgerList = burger.returnList()
-                    val burgerPrice = burger.returnPrice()
-                    val burgerComment = burger.returnComment()
+                    var burgerList = burger.returnList()
+                    var burgerPrice = burger.returnPrice()
+                    var burgerComment = burger.returnComment()
                     when (selectBurger) {
                         (burgerList.indexOf(burgerList[0])+1) -> {
                             println("${burgerList[0]}  | ${burgerPrice[0]} | ${burgerComment[0]}")
                             println("위 메뉴를 장바구니에 추가하시겠습니까?")
                             println("1. 확인    2.취소  ")
                             burger.inputWithException()
-                            val addBurger = burger.returnValue()
+                            var addBurger = burger.returnValue()
                             if (addBurger == 1) {
                                 println("${burgerList[0]} 가 장바구니에 추가되었습니다.")
                                 cartList.add(burgerList[0])
@@ -59,7 +61,7 @@ fun main() { //gittest
                             println("위 메뉴를 장바구니에 추가하시겠습니까?")
                             println("1. 확인    2.취소  ")
                             burger.inputWithException()
-                            val addBurger = burger.returnValue()
+                            var addBurger = burger.returnValue()
                             if (addBurger == 1) {
                                 println("${burgerList[1]} 가 장바구니에 추가되었습니다.")
                                 cartList.add(burgerList[1])
@@ -78,7 +80,7 @@ fun main() { //gittest
                             println("위 메뉴를 장바구니에 추가하시겠습니까?")
                             println("1. 확인    2.취소  ")
                             burger.inputWithException()
-                            val addBurger = burger.returnValue()
+                            var addBurger = burger.returnValue()
                             if (addBurger == 1) {
                                 println("${burgerList[2]} 가 장바구니에 추가되었습니다.")
                                 cartList.add(burgerList[2])
@@ -97,7 +99,7 @@ fun main() { //gittest
                             println("위 메뉴를 장바구니에 추가하시겠습니까?")
                             println("1. 확인    2.취소  ")
                             burger.inputWithException()
-                            val addBurger = burger.returnValue()
+                            var addBurger = burger.returnValue()
                             if (addBurger == 1) {
                                 println("${burgerList[3]} 가 장바구니에 추가되었습니다.")
                                 cartList.add(burgerList[3])
@@ -116,7 +118,7 @@ fun main() { //gittest
                             println("위 메뉴를 장바구니에 추가하시겠습니까?")
                             println("1. 확인    2.취소  ")
                             burger.inputWithException()
-                            val addBurger = burger.returnValue()
+                            var addBurger = burger.returnValue()
                             if (addBurger == 1) {
                                 println("${burgerList[4]} 가 장바구니에 추가되었습니다.")
                                 cartList.add(burgerList[4])
@@ -136,10 +138,10 @@ fun main() { //gittest
             //콘크리트
             2 -> {
                 while (true) {
-                    val concrete = Concrete()
+                    var concrete = Concrete()
                     concrete.displayInfo()
                     concrete.inputWithException()
-                    val selectConcreteMenu = concrete.returnValue()
+                    var selectConcreteMenu = concrete.returnValue()
                     println(selectConcreteMenu)
                     break
                 }
@@ -147,10 +149,10 @@ fun main() { //gittest
             //음료
             3 -> {
                 while (true) {
-                    val drink = Drink()
+                    var drink = Drink()
                     drink.displayInfo()
                     drink.inputWithException()
-                    val selectDrinkMenu = drink.returnValue()
+                    var selectDrinkMenu = drink.returnValue()
                     println(selectDrinkMenu)
                     break
                 }
@@ -158,10 +160,10 @@ fun main() { //gittest
             //치킨
             4 -> {
                 while (true) {
-                    val chicken = Chicken()
+                    var chicken = Chicken()
                     chicken.displayInfo()
                     chicken.inputWithException()
-                    val selectChickenMenu = chicken.returnValue()
+                    var selectChickenMenu = chicken.returnValue()
                     println(selectChickenMenu)
                     break
                 }
@@ -172,40 +174,20 @@ fun main() { //gittest
                 break
             }
             5 -> {
-                if (cartList.size != 0) {
-                    println("아래와 같이 주문하시겠습니까?")
-                    println("[Orders]")
-                    for (i in 0..<cartList.size){
-                        println("${cartList[i]}  | ${cartPrice[i]} | ${cartComment[i]}")
-                    }
-                    println("[Total]")
-                    var total: Int = 0
-                    for (i in 0..<cartList.size){
-                        total += cartPrice[i]
-                    }
-                    println("${total}원")
-                    println("1. 주문      2. 메뉴판")
-                    var input = readln().toInt()
-                    if (input ==1) {
-                        if (total>account) {
-                            println("현재 잔액은 ${account}원으로 ${total-account}원이 부족합니다.")
-                        }
-                        else {
-                            println("주문이 완료되었습니다. 처음 화면으로 돌아갑니다.")
-                            account -= total
-                            cartList.clear()
-                            cartPrice.clear()
-                            cartComment.clear()
-                        }
-                    }
-                    else {
-                        continue
-                    }
-                }
-                else {
-                    println("상품이 없습니다. 처음 화면으로 돌아갑니다.")
-                }
-                continue
+                var order = Order()
+                order.displayInfo()
+                order.isCartSizeZero(
+                    cartList,
+                    cartPrice,
+                    cartComment)
+                account = order.returnAccount()
+            }
+            6 -> {
+                var cancel = Cancel()
+                cancel.displayInfo()
+                cancel.cancelCart(cartList,
+                    cartPrice,
+                    cartComment)
             }
 
             // 그 외 숫자
@@ -213,6 +195,9 @@ fun main() { //gittest
                 println("올바른 숫자를 입력해 주세요.")
             }
         }
+
+
     }
+
 }
 
