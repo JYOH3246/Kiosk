@@ -1,4 +1,4 @@
-class Burger : Food(), ProductInfo {
+open class Burger : Food(), ProductInfo {
     private var list = ArrayList<String>()
     private var comment = ArrayList<String>()
     private var price = ArrayList<Int>()

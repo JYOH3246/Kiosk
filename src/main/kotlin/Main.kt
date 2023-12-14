@@ -1,13 +1,14 @@
 fun main() { //gittest
     // 무한루프 : 종료를 선택해야 프로그램이 끝남
+    val cartList = ArrayList<String>()
+    val cartPrice = ArrayList<Int>()
+    val cartComment = ArrayList<String>()
     loop@ while (true) {
         val food = Food()
         val account = 20000
-        val cartList = ArrayList<String>()
-        val cartPrice = ArrayList<Int>()
-        val cartComment = ArrayList<String>()
         // UI 출력
         food.displayInfo()
+        println("상품이 ${cartList.size}개")
         // 숫자를 입력받는 Input with 예외처리
         food.inputWithException()
         val selectFood = food.returnValue()
@@ -21,6 +22,7 @@ fun main() { //gittest
                     burger.price()
                     burger.comment()
                     burger.displayInfo()
+
                     burger.inputWithException()
                     val selectBurger = burger.returnValue()
                     println(selectBurger)
@@ -168,6 +170,41 @@ fun main() { //gittest
             0 -> {
                 println("프로그램을 종료합니다.")
                 break
+            }
+            5 -> {
+                if (cartList.size != 0) {
+                    println("아래와 같이 주문하시겠습니까?")
+                    println("[Orders]")
+                    for (i in 0..<cartList.size){
+                        println("${cartList[i]}  | ${cartPrice[i]} | ${cartComment[i]}")
+                    }
+                    println("[Total]")
+                    var total: Int = 0
+                    for (i in 0..<cartList.size){
+                        total += cartPrice[i]
+                    }
+                    println("${total}원")
+                    println("1. 주문      2. 메뉴판")
+                    var input = readln().toInt()
+                    if (input ==1) {
+                        if (total>account) {
+                            println("현재 잔액은 ${account}원으로 ${total-account}원이 부족합니다.")
+                        }
+                        else {
+                            println("주문이 완료되었습니다. 처음 화면으로 돌아갑니다.")
+                            cartList.clear()
+                            cartPrice.clear()
+                            cartComment.clear()
+                        }
+                    }
+                    else {
+                        continue
+                    }
+                }
+                else {
+                    println("상품이 없습니다. 처음 화면으로 돌아갑니다.")
+                }
+                continue
             }
 
             // 그 외 숫자
