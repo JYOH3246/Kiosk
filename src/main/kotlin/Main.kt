@@ -1,7 +1,11 @@
 fun main() { //gittest
     // 무한루프 : 종료를 선택해야 프로그램이 끝남
-    while (true) {
+    loop@ while (true) {
         val food = Food()
+        val account = 20000
+        val productList = ArrayList<String>()
+        val productPrice = ArrayList<Int>()
+        val productComment = ArrayList<String>()
         // UI 출력
         food.displayInfo()
         // 숫자를 입력받는 Input with 예외처리
@@ -20,7 +24,111 @@ fun main() { //gittest
                     burger.inputWithException()
                     val selectBurger = burger.returnValue()
                     println(selectBurger)
-                    break
+                    if (selectBurger == 0) {
+                        continue@loop
+                    }
+                    val burgerList = burger.returnList()
+                    val burgerPrice = burger.returnPrice()
+                    val burgerComment = burger.returnComment()
+                    when (selectBurger) {
+                        (burgerList.indexOf(burgerList[0])+1) -> {
+                            println("${burgerList[0]}  | ${burgerPrice[0]} | ${burgerComment[0]}")
+                            println("위 메뉴를 장바구니에 추가하시겠습니까?")
+                            println("1. 확인    2.취소  ")
+                            burger.inputWithException()
+                            val addBurger = burger.returnValue()
+                            if (addBurger == 1) {
+                                println("${burgerList[0]} 가 장바구니에 추가되었습니다.")
+                                productList.add(burgerList[0])
+                                productPrice.add(burgerPrice[0])
+                                productComment.add(burgerComment[0])
+                                continue
+                            }
+                            else if (addBurger ==2) {
+                                continue
+                            }
+                            else {
+                                println("올바른 숫자를 입력해 주세요.")
+                            }
+
+                        }
+                        (burgerList.indexOf(burgerList[1])+1) -> {
+                            println("${burgerList[1]}  | ${burgerPrice[1]} | ${burgerComment[1]}")
+                            println("위 메뉴를 장바구니에 추가하시겠습니까?")
+                            println("1. 확인    2.취소  ")
+                            burger.inputWithException()
+                            val addBurger = burger.returnValue()
+                            if (addBurger == 1) {
+                                println("${burgerList[1]} 가 장바구니에 추가되었습니다.")
+                                productList.add(burgerList[1])
+                                productPrice.add(burgerPrice[1])
+                                productComment.add(burgerComment[1])
+                            }
+                            else if (addBurger ==2) {
+                                continue
+                            }
+                            else {
+                                println("올바른 숫자를 입력해 주세요.")
+                            }
+                        }
+                        (burgerList.indexOf(burgerList[2])+1) -> {
+                            println("${burgerList[2]}  | ${burgerPrice[2]} | ${burgerComment[2]}")
+                            println("위 메뉴를 장바구니에 추가하시겠습니까?")
+                            println("1. 확인    2.취소  ")
+                            burger.inputWithException()
+                            val addBurger = burger.returnValue()
+                            if (addBurger == 1) {
+                                println("${burgerList[2]} 가 장바구니에 추가되었습니다.")
+                                productList.add(burgerList[2])
+                                productPrice.add(burgerPrice[2])
+                                productComment.add(burgerComment[2])
+                            }
+                            else if (addBurger ==2) {
+                                continue
+                            }
+                            else {
+                                println("올바른 숫자를 입력해 주세요.")
+                            }
+                        }
+                        (burgerList.indexOf(burgerList[3])+1) -> {
+                            println("${burgerList[3]}  | ${burgerPrice[3]} | ${burgerComment[3]}")
+                            println("위 메뉴를 장바구니에 추가하시겠습니까?")
+                            println("1. 확인    2.취소  ")
+                            burger.inputWithException()
+                            val addBurger = burger.returnValue()
+                            if (addBurger == 1) {
+                                println("${burgerList[3]} 가 장바구니에 추가되었습니다.")
+                                productList.add(burgerList[3])
+                                productPrice.add(burgerPrice[3])
+                                productComment.add(burgerComment[3])
+                            }
+                            else if (addBurger ==2) {
+                                continue
+                            }
+                            else {
+                                println("올바른 숫자를 입력해 주세요.")
+                            }
+                        }
+                        (burgerList.indexOf(burgerList[4])+1) -> {
+                            println("${burgerList[4]}  | ${burgerPrice[4]} | ${burgerComment[4]}")
+                            println("위 메뉴를 장바구니에 추가하시겠습니까?")
+                            println("1. 확인    2.취소  ")
+                            burger.inputWithException()
+                            val addBurger = burger.returnValue()
+                            if (addBurger == 1) {
+                                println("${burgerList[4]} 가 장바구니에 추가되었습니다.")
+                                productList.add(burgerList[4])
+                                productPrice.add(burgerPrice[4])
+                                productComment.add(burgerComment[4])
+                            }
+                            else if (addBurger ==2) {
+                                continue
+                            }
+                            else {
+                                println("올바른 숫자를 입력해 주세요.")
+                            }
+                        }
+                    }
                 }
             }
             //콘크리트
@@ -51,8 +159,8 @@ fun main() { //gittest
                     val chicken = Chicken()
                     chicken.displayInfo()
                     chicken.inputWithException()
-                    val selectChickenMenuMenu = chicken.returnValue()
-                    println(selectChickenMenuMenu)
+                    val selectChickenMenu = chicken.returnValue()
+                    println(selectChickenMenu)
                     break
                 }
             }
